@@ -112,13 +112,7 @@ const EMO_CHANGE_ROWS = [
   },
 ];
 
-const EMO_CHANGE_MODELS = [
-  "Voicebox",
-  "ELaTE",
-  "EmoCtrl-TTS",
-  "F5-TTS",
-  "Ours",
-];
+
 
 const JVNV_EMOTIONS = [
   "happy",
@@ -404,7 +398,7 @@ const Home = () => (
                                 aria-label={`Reference audio for ${emotion} ${spk.label} speaker`}
                               />
                             </td>
-                            {JVNV_MODELS.map((model, index) => (
+                            {JVNV_MODELS.map((model) => (
                               <td key={model.key} className="p-4 sm:p-6">
                                 <audio
                                   controls
