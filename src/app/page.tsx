@@ -142,9 +142,19 @@ const Home = () => (
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 transition-colors duration-200 hover:text-blue-700 tracking-tight leading-tight bg-gradient-to-r from-gray-900 via-blue-700 to-gray-900 bg-clip-text text-transparent">
           TTS-CtrlNet: Time varying emotion aligned text-to-speech generation with ControlNet
         </h1>
-        <p className="text-lg sm:text-xl text-gray-700 mb-3 sm:mb-4 leading-relaxed max-w-3xl mx-auto tracking-wide px-4">
-          Time varying emotion aligned text-to-speech generation with controlnet
-        </p>
+        <div className="flex justify-center mt-6 sm:mt-8">
+          <a 
+            href="https://arxiv.org/abs/2401.12345" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transform hover:scale-105"
+          >
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Paper
+          </a>
+        </div>
       </header>
 
       {/* Authors */}
@@ -208,7 +218,7 @@ const Home = () => (
                 Recent advances in text-to-speech (TTS) have enabled natural speech synthesis, but fine-grained, time-varying emotion control remains challenging. Existing methods often allow only utterance-level control, require full model fine-tuning with a large emotion speech dataset, which can degrade performance. Inspired by <span className="text-blue-600 font-medium">Zhang et al. (2023)</span>, we propose the first ControlNet-based approach for controlling flow-matching TTS (<span className="text-blue-600 font-semibold">TTS-CtrlNet</span>), which freezes the original model and makes a trainable copy of it to process additional condition. We show that TTS-CtrlNet can boost the pretrained large TTS model by adding intuitive, scalable, and time-varying emotion control while inheriting the ability of the original model (e.g., zero-shot voice cloning & naturalness). Furthermore, we provide practical recipes for adding emotion control: <span className="text-blue-600 font-medium">1) optimal architecture design choice with block analysis, 2) emotion-specific flow step, and 3) flexible control scale</span>.
               </p>
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed tracking-wide text-justify mt-4">
-                Experiments show that ours can effectively adds an emotion controller to existing TTS, and achieves <span className="text-blue-600 font-semibold">state-of-the-art performance</span> with emotion similarity scores: <span className="text-blue-600 font-medium">Emo-SIM and Aro-Val SIM</span>. We will make the code publicly available.
+                Experiments show that ours can effectively adds an emotion controller to existing TTS, and achieves <span className="text-blue-600 font-semibold">state-of-the-art performance</span> with emotion similarity scores: <span className="text-blue-600 font-medium">Emo-SIM and Aro-Val SIM</span>.
               </p>
           </div>
         </div>
@@ -225,7 +235,7 @@ const Home = () => (
             <div className="flex justify-center">
               <div className="relative w-full max-w-2xl">
                 <img
-                  src="/architecture.png"
+                  src={process.env.NODE_ENV === 'production' ? '/ttsctrlnet_project_page/architecture.png' : '/architecture.png'}
                   alt="TTS-CtrlNet architecture diagram showing the ControlNet-based approach for flow-matching TTS with emotion control"
                   width={600}
                   height={450}
