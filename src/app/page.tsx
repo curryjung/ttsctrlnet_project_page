@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import Image from 'next/image';
 
 const EMO_CHANGE_ROWS = [
   {
@@ -225,13 +224,12 @@ const Home = () => (
             </h2>
             <div className="flex justify-center">
               <div className="relative w-full max-w-2xl">
-                <Image
+                <img
                   src="/architecture.png"
                   alt="TTS-CtrlNet architecture diagram showing the ControlNet-based approach for flow-matching TTS with emotion control"
                   width={600}
                   height={450}
                   className="w-full h-auto rounded-lg shadow-sm transition-all duration-200 hover:shadow-md border border-blue-50"
-                  priority
                 />
               </div>
             </div>
@@ -433,8 +431,8 @@ const Home = () => (
       {/* Notes */}
       <footer className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 sm:p-10 transition-all duration-200 hover:shadow-md">
         <div className="text-xs sm:text-sm text-gray-600 space-y-1 sm:space-y-2 tracking-wide" role="contentinfo" aria-label="Model training information">
-          <p className="transition-colors duration-200 hover:text-blue-600">(*): Models trained on ESD dataset</p>
-          <p className="transition-colors duration-200 hover:text-blue-600">(**): Models trained on ESD + JVNV dataset</p>
+          <p className="transition-colors duration-200 hover:text-blue-600">(*):  They share same backbone model (Voicebox)</p>
+          <p className="transition-colors duration-200 hover:text-blue-600">(**):  They share same backbone model (F5-TTS)</p>
         </div>
       </footer>
     </div>
