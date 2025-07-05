@@ -2,11 +2,14 @@
   "name": "ttsctrlnet_project_page",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://curryjung.github.io/ttsctrlnet_project_page",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next build",
+    "deploy": "npm run export && touch out/.nojekyll"
   },
   "dependencies": {
     "react": "^19.0.0",
