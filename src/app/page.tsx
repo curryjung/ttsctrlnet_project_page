@@ -151,7 +151,7 @@ const Home = () => (
         </h1>
         <div className="flex justify-center mt-6 sm:mt-8">
           <a 
-            href="https://arxiv.org/abs/2401.12345" 
+            href="https://arxiv.org/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transform hover:scale-105"
@@ -181,7 +181,11 @@ const Home = () => (
           <h2 id="authors-title" className="sr-only">Authors</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-4xl mx-auto">
           <div className="text-center">
-            <h3 className="font-semibold text-gray-900 tracking-wide mb-1">Jaeseok Jeong</h3>
+            <h3 className="font-semibold text-gray-900 tracking-wide mb-1">
+              <a href="https://sites.google.com/yonsei.ac.kr/jaeseokjeong" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700 transition-colors duration-200">
+                Jaeseok Jeong
+              </a>
+            </h3>
             <p className="text-sm text-gray-700 tracking-wide mb-1">Yonsei University</p>
                           <a 
                 href="mailto:jete_jeong@yonsei.ac.kr" 
@@ -201,7 +205,11 @@ const Home = () => (
             </a>
           </div>
           <div className="text-center">
-            <h3 className="font-semibold text-gray-900 tracking-wide mb-1">Mingi Kwon</h3>
+            <h3 className="font-semibold text-gray-900 tracking-wide mb-1">
+              <a href="https://sites.google.com/view/mingikwon" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700 transition-colors duration-200">
+                Mingi Kwon
+              </a>
+            </h3>
             <p className="text-sm text-gray-700 tracking-wide mb-1">Yonsei University</p>
             <a 
               href="mailto:kwonmingi@yonsei.ac.kr" 
@@ -211,7 +219,11 @@ const Home = () => (
             </a>
           </div>
           <div className="text-center">
-            <h3 className="font-semibold text-gray-900 tracking-wide mb-1">Youngjung Uh</h3>
+            <h3 className="font-semibold text-gray-900 tracking-wide mb-1">
+              <a href="https://vilab.yonsei.ac.kr/members/professor" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700 transition-colors duration-200">
+                Youngjung Uh
+              </a>
+            </h3>
             <p className="text-sm text-gray-700 tracking-wide mb-1">Yonsei University</p>
             <a 
               href="mailto:yj.uh@yonsei.ac.kr" 
