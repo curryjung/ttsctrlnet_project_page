@@ -1,4 +1,6 @@
+"use client";
 import React, { Fragment } from "react";
+import { motion } from "framer-motion";
 
 const EMO_CHANGE_ROWS = [
   {
@@ -138,7 +140,12 @@ const Home = () => (
   <div className="min-h-screen bg-white font-sans antialiased">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
       {/* Header */}
-      <header className="text-center mb-16 sm:mb-20">
+      <motion.header 
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="text-center mb-16 sm:mb-20"
+      >
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 transition-colors duration-200 hover:text-blue-700 tracking-tight leading-tight bg-gradient-to-r from-gray-900 via-blue-700 to-gray-900 bg-clip-text text-transparent">
           TTS-CtrlNet: Time varying emotion aligned text-to-speech generation with ControlNet
         </h1>
@@ -155,11 +162,22 @@ const Home = () => (
             Paper
           </a>
         </div>
-      </header>
+      </motion.header>
 
       {/* Authors */}
-      <section className="mb-20 sm:mb-24" aria-labelledby="authors-title">
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 sm:p-10 transition-all duration-200 hover:shadow-md">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="mb-20 sm:mb-24" 
+        aria-labelledby="authors-title"
+      >
+        <motion.div 
+          whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 sm:p-10 transition-all duration-200 hover:shadow-md"
+        >
           <h2 id="authors-title" className="sr-only">Authors</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-4xl mx-auto">
           <div className="text-center">
@@ -203,12 +221,23 @@ const Home = () => (
             </a>
           </div>
         </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* Abstract */}
-      <section className="mb-20 sm:mb-24" aria-labelledby="abstract-title">
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 sm:p-10 transition-all duration-200 hover:shadow-md">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="mb-20 sm:mb-24" 
+        aria-labelledby="abstract-title"
+      >
+        <motion.div 
+          whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 sm:p-10 transition-all duration-200 hover:shadow-md"
+        >
           <div className="max-w-4xl mx-auto">
           <h2 id="abstract-title" className="text-2xl sm:text-3xl font-bold mb-6 transition-colors duration-200 hover:text-blue-700 tracking-tight leading-tight bg-gradient-to-r from-gray-900 to-blue-700 bg-clip-text text-transparent">
             Abstract
@@ -222,12 +251,23 @@ const Home = () => (
               </p>
           </div>
         </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* Architecture */}
-      <section className="mb-20 sm:mb-24" aria-labelledby="architecture-title">
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 sm:p-10 transition-all duration-200 hover:shadow-md">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="mb-20 sm:mb-24" 
+        aria-labelledby="architecture-title"
+      >
+        <motion.div 
+          whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 sm:p-10 transition-all duration-200 hover:shadow-md"
+        >
           <div className="max-w-3xl mx-auto">
             <h2 id="architecture-title" className="text-2xl sm:text-3xl font-bold mb-6 transition-colors duration-200 hover:text-blue-700 tracking-tight leading-tight text-center bg-gradient-to-r from-gray-900 to-blue-700 bg-clip-text text-transparent">
               Architecture
@@ -249,8 +289,8 @@ const Home = () => (
               </p>
             </div>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* Divider */}
       <hr className="border-t border-gradient-to-r from-gray-300 via-blue-200 to-gray-300 my-16 sm:my-20 transition-colors duration-200 hover:border-blue-300" aria-hidden="true" />
@@ -279,14 +319,14 @@ const Home = () => (
                 <table className="w-full" role="table" aria-label="EMO-Change audio samples">
                   <thead>
                     <tr className="border-b border-gray-300 bg-gradient-to-r from-gray-100 to-blue-50">
-                      <th scope="col" className="text-left p-4 sm:p-6 font-semibold text-gray-900 transition-colors duration-200 hover:text-blue-700 tracking-wide text-sm sm:text-base">Emotion</th>
-                      <th scope="col" className="text-left p-4 sm:p-6 font-semibold text-gray-900 transition-colors duration-200 hover:text-blue-700 tracking-wide text-sm sm:text-base">Gender</th>
-                      <th scope="col" className="text-left p-4 sm:p-6 font-semibold text-gray-900 transition-colors duration-200 hover:text-blue-700 tracking-wide text-sm sm:text-base">Audio Prompt</th>
-                      <th scope="col" className="text-left p-4 sm:p-6 font-semibold text-gray-900 transition-colors duration-200 hover:text-blue-700 tracking-wide text-sm sm:text-base">Voicebox</th>
-                      <th scope="col" className="text-left p-4 sm:p-6 font-semibold text-gray-900 transition-colors duration-200 hover:text-blue-700 tracking-wide text-sm sm:text-base">ELaTE</th>
-                      <th scope="col" className="text-left p-4 sm:p-6 font-semibold text-gray-900 transition-colors duration-200 hover:text-blue-700 tracking-wide text-sm sm:text-base">EmoCtrl-TTS</th>
-                      <th scope="col" className="text-left p-4 sm:p-6 font-semibold text-gray-900 transition-colors duration-200 hover:text-blue-700 tracking-wide text-sm sm:text-base">F5-TTS</th>
-                      <th scope="col" className="text-left p-4 sm:p-6 font-semibold text-gray-900 transition-colors duration-200 hover:text-blue-700 tracking-wide text-sm sm:text-base">Ours</th>
+                      <th scope="col" className="text-center p-4 sm:p-6 font-semibold text-gray-900 transition-colors duration-200 hover:text-blue-700 tracking-wide text-sm sm:text-base">Emotion</th>
+                      <th scope="col" className="text-center p-4 sm:p-6 font-semibold text-gray-900 tracking-wide text-sm sm:text-base">Gender</th>
+                      <th scope="col" className="text-center p-4 sm:p-6 font-semibold text-gray-900 tracking-wide text-sm sm:text-base">Audio Prompt</th>
+                      <th scope="col" className="text-center p-4 sm:p-6 font-semibold text-gray-900 tracking-wide text-sm sm:text-base">Voicebox</th>
+                      <th scope="col" className="text-center p-4 sm:p-6 font-semibold text-gray-900 tracking-wide text-sm sm:text-base">ELaTE</th>
+                      <th scope="col" className="text-center p-4 sm:p-6 font-semibold text-gray-900 tracking-wide text-sm sm:text-base">EmoCtrl-TTS</th>
+                      <th scope="col" className="text-center p-4 sm:p-6 font-semibold text-gray-900 tracking-wide text-sm sm:text-base">F5-TTS</th>
+                      <th scope="col" className="text-center p-4 sm:p-6 font-bold text-blue-700 tracking-wide text-sm sm:text-base shadow-sm">Ours</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -372,15 +412,15 @@ const Home = () => (
                 <table className="w-full" role="table" aria-label="JVNV S2ST audio samples">
                   <thead>
                     <tr className="border-b border-gray-300 bg-gradient-to-r from-gray-100 to-blue-50">
-                      <th scope="col" className="text-left p-4 sm:p-6 font-semibold text-gray-900 transition-colors duration-200 hover:text-blue-900 tracking-wide text-sm sm:text-base">Emotion</th>
-                      <th scope="col" className="text-left p-4 sm:p-6 font-semibold text-gray-900 transition-colors duration-200 hover:text-blue-900 tracking-wide text-sm sm:text-base">Speaker</th>
-                      <th scope="col" className="text-left p-4 sm:p-6 font-semibold text-gray-900 transition-colors duration-200 hover:text-blue-900 tracking-wide text-sm sm:text-base">Reference</th>
-                      <th scope="col" className="text-left p-4 sm:p-6 font-semibold text-gray-900 transition-colors duration-200 hover:text-blue-900 tracking-wide text-sm sm:text-base">SeamlessExpressive</th>
-                      <th scope="col" className="text-left p-4 sm:p-6 font-semibold text-gray-900 transition-colors duration-200 hover:text-blue-900 tracking-wide text-sm sm:text-base">Voicebox(*)</th>
-                      <th scope="col" className="text-left p-4 sm:p-6 font-semibold text-gray-900 transition-colors duration-200 hover:text-blue-900 tracking-wide text-sm sm:text-base">ELaTE(*)</th>
-                      <th scope="col" className="text-left p-4 sm:p-6 font-semibold text-gray-900 transition-colors duration-200 hover:text-blue-900 tracking-wide text-sm sm:text-base">EmoCtrl-TTS(*)</th>
-                      <th scope="col" className="text-left p-4 sm:p-6 font-semibold text-gray-900 transition-colors duration-200 hover:text-blue-900 tracking-wide text-sm sm:text-base">F5-TTS(**)</th>
-                      <th scope="col" className="text-left p-4 sm:p-6 font-semibold text-gray-900 transition-colors duration-200 hover:text-blue-900 tracking-wide text-sm sm:text-base">Ours(**)</th>
+                      <th scope="col" className="text-center p-4 sm:p-6 font-semibold text-gray-900 transition-colors duration-200 hover:text-blue-900 tracking-wide text-sm sm:text-base">Emotion</th>
+                      <th scope="col" className="text-center p-4 sm:p-6 font-semibold text-gray-900 tracking-wide text-sm sm:text-base">Speaker</th>
+                      <th scope="col" className="text-center p-4 sm:p-6 font-semibold text-gray-900 tracking-wide text-sm sm:text-base">Reference</th>
+                      <th scope="col" className="text-center p-4 sm:p-6 font-semibold text-gray-900 tracking-wide text-sm sm:text-base">SeamlessExpressive</th>
+                      <th scope="col" className="text-center p-4 sm:p-6 font-semibold text-gray-900 tracking-wide text-sm sm:text-base">Voicebox(*)</th>
+                      <th scope="col" className="text-center p-4 sm:p-6 font-semibold text-gray-900 tracking-wide text-sm sm:text-base">ELaTE(*)</th>
+                      <th scope="col" className="text-center p-4 sm:p-6 font-semibold text-gray-900 tracking-wide text-sm sm:text-base">EmoCtrl-TTS(*)</th>
+                      <th scope="col" className="text-center p-4 sm:p-6 font-semibold text-gray-900 tracking-wide text-sm sm:text-base">F5-TTS(**)</th>
+                      <th scope="col" className="text-center p-4 sm:p-6 font-bold text-blue-700 tracking-wide text-sm sm:text-base shadow-sm">Ours(**)</th>
                     </tr>
                   </thead>
                   <tbody>
