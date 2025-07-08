@@ -151,7 +151,7 @@ const Home = () => (
         </h1>
         <div className="flex justify-center mt-6 sm:mt-8">
           <a 
-            href="https://arxiv.org/" 
+            href="http://arxiv.org/abs/2507.04349" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 transform hover:scale-105"
@@ -195,7 +195,11 @@ const Home = () => (
               </a>
           </div>
           <div className="text-center">
-            <h3 className="font-semibold text-gray-900 tracking-wide mb-1">Yuna Lee</h3>
+            <h3 className="font-semibold text-gray-900 tracking-wide mb-1">
+              <a href="https://scholar.google.com/citations?user=cecj4NkAAAAJ&hl=ko" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700 transition-colors duration-200">
+                Yuna Lee
+              </a>
+            </h3>
             <p className="text-sm text-gray-700 tracking-wide mb-1">KT Corporation</p>
             <a 
               href="mailto:yu-na.lee@kt.com" 
